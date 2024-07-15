@@ -37,6 +37,7 @@ class DynamicOneTrackModel:
         F_qh = self.params.A_h * np.sin(
             self.params.B_h * np.arctan(self.params.C_h * alpha_h)
         )
+        # Differentialgleichungen aus Skript mit Annahme dass keine Längskräfte sondern nur Seitenkräfte
 
         r_dot = (
             -self.params.l_h * F_qh + F_qv * self.params.l_v * np.cos(delta)

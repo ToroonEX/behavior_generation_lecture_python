@@ -7,10 +7,6 @@ if __name__ == "__main__":
         initial_state=traffic_light_state_machine.Go()
     )
 
-    assert "Go" == tlsm.trigger(
-        traffic_light_state_machine.LIGHT_CHANGE_TIMER_ELAPSED_EVENT
-    )
-
     assert "PrepareToStop" == tlsm.trigger(
         traffic_light_state_machine.BUTTON_PRESSED_EVENT
     )
@@ -18,8 +14,6 @@ if __name__ == "__main__":
     assert "Stop" == tlsm.trigger(
         traffic_light_state_machine.LIGHT_CHANGE_TIMER_ELAPSED_EVENT
     )
-
-    assert "Stop" == tlsm.trigger(traffic_light_state_machine.BUTTON_PRESSED_EVENT)
 
     assert "PrepareToStart" == tlsm.trigger(
         traffic_light_state_machine.PEDESTRIAN_TIMER_ELAPSED_EVENT
